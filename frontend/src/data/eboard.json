@@ -1,0 +1,80 @@
+[
+    {
+      "id": 1,
+      "name": "Chelsea Minard",
+      "image": "/images/eboard/Chelsea.jpg",
+      "position": "President",
+      "linkedin":"https://www.linkedin.com/in/chelsea-minard/"
+    },
+    {
+      "id": 2,
+      "name": "Jaunel Panton",
+      "image": "/images/eboard/Jaunel.jpg",
+      "position": "Vice President",
+      "linkedin":"https://www.linkedin.com/in/jaunel-panton/"
+    }, 
+    {
+      "id": 3,
+      "name": "Najae Potts",
+      "image": "/images/eboard/Najae.jpg",
+      "position": "Secretary",
+      "linkedin":"https://www.linkedin.com/in/najae-potts/"
+    }, 
+    {
+      "id": 4,
+      "name": "Oluwajomilou King",
+      "image": "/images/eboard/JK.jpg",
+      "position": "Treasurer",
+      "linkedin": "https://www.linkedin.com/in/oluwajomiloju-king/"
+    },
+    {
+      "id": 5,
+      "name": "Krystalyn Douglas",
+      "image": "/images/eboard/Krystalyn.png",
+      "position": "Events Coordinator",
+      "linkedin": "https://www.linkedin.com/in/krystalyndouglas/"
+    },
+    {
+      "id": 6,
+      "name": "Stephanie Adeoye",
+      "image": "/images/eboard/Stephanie.jpg",
+      "position": "Sponsorship Coordinator",
+      "linkedin":"https://www.linkedin.com/in/stephanie-adeoye-2a3b70291/"
+    },
+    {
+      "id": 7,
+      "name": "Beatrice Oshokoya",
+      "image": "/images/eboard/Beatrice.jpg",
+      "position": "Social Media Manager",
+      "linkedin": "https://www.linkedin.com/in/beatrice-oshokoya/"
+    },
+    {
+      "id": 8,
+      "name": "Kaysie Anderson",
+      "image": "/images/eboard/Kaysie.jpg",
+      "position": "Marketing Coordinator",
+      "linkedin": "https://www.linkedin.com/in/kaysie-anderson-315aa1258/"
+    },
+    {
+      "id": 9,
+      "name": "Kayla Harris",
+      "image": "/images/eboard/Kayla.jpg",
+      "position": "Miss WiCS",
+      "linkedin": "https://www.linkedin.com/in/kayla-harris0720/"
+    },
+    {
+      "id": 10,
+      "name": "Marissa Savage",
+      "image": "/images/eboard/Marissa.jpg",
+      "position": "Membership Coordinator",
+      "linkedin": "https://www.linkedin.com/in/marissa-savage-04923124a/"
+    },
+    {
+      "id": 11,
+      "name": "Dr. Naja Mack",
+      "image": "/images/eboard/Mack.png",
+      "position": "Advisor",
+      "linkedin": "https://www.linkedin.com/in/najamack/"
+    }
+
+]
