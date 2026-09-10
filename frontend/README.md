@@ -1,16 +1,103 @@
-# React + Vite
+# MSU WiCS Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React frontend for the Morgan State University Women in Computer Science website. This app is a redesign of the organization’s previous Wix site, with shared layout (navbar and footer), home slideshow, executive board roster, and founder story.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** with Vite 7
+- **React Router 7** for client-side routing
+- **styled-components** for component styles
+- **react-icons** for social and LinkedIn icons
+- Global tokens and resets in `src/index.css`
 
-## React Compiler
+There is no backend in this folder. Pages load static JSON and images from `public/`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting started
 
-## Expanding the ESLint configuration
+Prerequisites: Node.js 18+ (or current LTS).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Vite serves the app at `http://localhost:5173`.
+
+| Script | Description |
+| --- | --- |
+| `npm run dev` | Local development with HMR |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | ESLint |
+
+## Project structure
+
+```
+frontend/
+├── public/                 # Static assets (logo, eboard photos, slideshow images)
+│   └── images/
+│       ├── wics-logo.png
+│       ├── eboard/
+│       └── slideshow/
+├── src/
+│   ├── App.jsx             # Router, Navbar, Footer
+│   ├── main.jsx
+│   ├── index.css           # Color tokens, typography, reset
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Slideshow.jsx   # Home carousel (reads slideshow.json)
+│   │   └── FounderStory.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Eboard.jsx      # Reads eboard.json
+│   │   └── WicsNews.jsx    # Stub; not routed yet
+│   └── data/
+│       ├── eboard.json
+│       └── slideshow.json
+├── index.html
+├── vite.config.js
+└── package.json
+```
+
+## Routes
+
+Wired in `src/App.jsx`:
+
+| Path | Page | Status |
+| --- | --- | --- |
+| `/` | Home — slideshow, intro, action tiles | Implemented |
+| `/about` | About — organization story and founders | Implemented |
+| `/eboard` | Executive board for 2025–2026 | Implemented |
+
+Navbar and home tiles also link to pages that are **not implemented yet**:
+
+- `/news` — WiCS News (`WicsNews.jsx` exists as a stub and is not registered in the router)
+- `/sponsors` — Our Sponsors
+- `/resource` — Resource Hub
+- `/gallery` — Gallery
+- `/interest-form` — Interest Form (home tile)
+
+## Layout and pages
+
+- **Navbar:** Logo (home), About, Eboard, WiCS News, Our Sponsors, Resource Hub, Gallery.
+- **Footer:** MSU WiCS name, Instagram, LinkedIn, and email (`morganstatewics@gmail.com`).
+- **Home:** Image slideshow, mission copy, and tiles for Interest Form, Get to Know WiCS, and Call to Sponsors.
+- **About:** Founder story (Chelsea Amihere and Abigail Dina) plus org history copy.
+- **Eboard:** Card grid from JSON — photo, name, role, LinkedIn.
+
+## Updating content
+
+**Executive board** — edit `src/data/eboard.json`. Each member needs `id`, `name`, `image`, `position`, and `linkedin`. Put photos in `public/images/eboard/` and use paths like `/images/eboard/Name.jpg`.
+
+**Home slideshow** — edit `src/data/slideshow.json`. Each slide needs `id`, `image`, and `caption`. Put images in `public/images/slideshow/` and use paths like `/images/slideshow/photo.jpg`.
+
+**Founders** — currently hardcoded in `src/components/FounderStory.jsx` (`FounderData`). Photos live under `public/images/eboard/`.
+
+After JSON or `public/` image changes, refresh the dev server; Vite picks up JSON imports on save.
+
+## Styling notes
+
+Primary blues (`#1976d2`, `#e3f2fd`) are used in styled-components and in CSS variables in `src/index.css`. Page-level layout and cards are mostly styled-components. `src/App.css` is leftover Vite template CSS and is not the source of truth for the current UI.
