@@ -10,6 +10,8 @@ import Home from "./pages/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Eboard from "./pages/Eboard.jsx";
+import About from "./pages/About.jsx";
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function MainRouter() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/eboard" element={<Eboard />} />
+      <Route path="/about" element={<About />} /> 
     </Routes>
   );
 }
